@@ -1,0 +1,27 @@
+<?php 
+           
+           
+   $hostName='localhost';
+   $userName='root';
+   $userPass='';
+   $dbName='rasa';
+
+           // Create connection
+           $conn = new mysqli($hostName,$userName,$userPass,$dbName);
+           // Check connection
+           if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+            }
+
+           
+           $name = $_POST['uname'];
+           $passwd =$_POST['passwd'];
+           $sql="UPDATE INTO `registeruser` (`uname`,`passwd`) VALUES ('".$name."',' '".$passwd."')";  
+           
+           if ($conn->query($sql) === TRUE) {
+                   echo "Update Successfull!!";
+            } else {
+                 echo "Error: " . $sql . "<br>" . $conn->error;
+              }
+          $conn->close();
+         ?>

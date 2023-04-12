@@ -1,0 +1,338 @@
+<div class="" style="background-color: rgb(177, 158, 167);">
+  <div class="row">
+
+    <div class="col-md-1">
+
+      <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 4.5rem;">
+
+        <ul class="nav nav-pills nav-flush flex-column text-center" style="background-color: black; height: 2000px;">
+          <div class="" href="#mytasks">
+            <li class="nav-item">
+              <a href="taskmanagement" class="nav-link  py-3 border-bottom" aria-current="page" ngbTooltip="Mytasks"
+                placement="right">
+                <i class="bi bi-house" style="margin-left: 5px; background-color: black;" role="img"
+                  aria-label="Home"></i>
+              </a>
+            </li>
+          </div>
+
+          <li class="nav-item">
+            <a href="project" class="nav-link  py-3 border-bottom" aria-current="page" ngbTooltip="Groups and projects"
+              placement="right">
+              <i class="bi bi-clipboard2-data fs-5" width="24" height="24" role="img" aria-label="Home"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="portfolio" class="nav-link  py-3 border-bottom" aria-current="page" ngbTooltip="Portfolios"
+              placement="right">
+              <i class="bi bi-briefcase" width="24" height="24" role="img" aria-label="Home"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="taskfilter" class="nav-link  py-3 border-bottom" aria-current="page"
+              ngbTooltip="Task Filtered Views" placement="right">
+              <i class="bi bi-funnel" width="24" height="24" role="img" aria-label="Home"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="crm" class="nav-link  py-3 border-bottom" aria-current="page" ngbTooltip="CRM" placement="right">
+              <i class="bi bi-person-rolodex" width="24" height="24" role="img" aria-label="Home"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="checkin" class="nav-link  py-3 border-bottom" aria-current="page" ngbTooltip="Automatic Checkins"
+              placement="right">
+              <i class="bi bi-activity" width="24" height="24" role="img" aria-label="Home"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="time" class="nav-link  py-3 border-bottom" aria-current="page" ngbTooltip="Time Tracking"
+              placement="right">
+              <i class="bi bi-clock-history" width="24" height="24" role="img" aria-label="Home"></i>
+            </a>
+          </li>
+          <div style="margin-bottom: 300px;">
+            <a href="users" class="nav-link mb-auto py-3 border-bottom" aria-current="page" ngbTooltip="Users"
+              placement="right">
+              <i class="bi bi-people" width="24" height="24" role="img" aria-label="Home"></i>
+            </a>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="sidebar" [ngClass]="{ 'expanded': isExpanded }">
+        <div class="header">
+
+          <div class="toggle" (click)="handleSidebarToggle()">
+            <span class="chevron"></span>
+          </div>
+        </div>
+        <div class="content">
+          <div class="link">
+            <div class="content" [routerLink]="['/mytasks']" [routerLinkActive]="'active'">
+
+
+            </div>
+          </div>
+          <div class="link">
+
+            <a href="groups"></a>
+
+          </div>
+          <div class="link">
+            <div class="content" [routerLink]="['portfolio']" [routerLinkActive]="'active'">
+
+
+            </div>
+          </div>
+        </div>
+        <div class="link">
+          <div class="content" [routerLink]="['/taskfilter']" [routerLinkActive]="'active'">
+
+
+          </div>
+        </div>
+        <div class="link">
+          <div class="content" [routerLink]="['/crm']" [routerLinkActive]="'active'">
+
+
+          </div>
+          <div class="link">
+            <div class="content" [routerLink]="['/checkin']" [routerLinkActive]="'active'">
+
+
+            </div>
+          </div>
+          <div class="link">
+            <div class="content" [routerLink]="['/tracking']" [routerLinkActive]="'active'">
+
+
+            </div>
+          </div>
+          <div class="link">
+            <div class="content" [routerLink]="['/users']" [routerLinkActive]="'active'">
+
+
+            </div>
+          </div>
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="margin-top: -1980px; margin-left: 80px;">
+        <h3>My Tasks in Development</h3>
+        <nav class="navbar navbar-expand-lg " style="margin-top: -18px;">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="taskmanagement">List</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Calender</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Files</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Analytics</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div> 
+      <div>
+      <table class="table-striped">
+        <th>Task Name</th>
+        <div *ngIf="showuid">User ID</div>
+        <tbody>
+          <tr *ngFor="let index of task; index as i">
+            <a class="actions" (click)="taskdetails(task[i])">
+              <td>{{task[i].taskname}}</td>
+            </a>
+            <td *ngIf="showuid">{{task[i].uid}}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <!-- <div class="col">
+        <button class="btn btn-primary" type="submit">Button</button>
+      </div> -->
+    </div>
+    <div class="col-md-6">
+   
+
+      <div class="card container" style="margin-left: 200px; width: 300px; margin-top: -1800px;" *ngIf="showTaskForm">
+        <form #task="ngForm" (ngSubmit)="edittask(task)">
+          <label>Task Name</label>
+  
+          <input name="taskname" ngModel #taskname="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.taskname}}>
+  
+  
+  
+          <label>logged hours</label>
+  
+          <input name="loggedhrs" ngModel #loggedhrs="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.loggedhrs}}>
+  
+  
+          <label>Description</label>
+  
+  
+          <input name="descrip" ngModel #descrip="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.description}}>
+  
+          <label>Project</label>
+  
+          <input name="projects" ngModel #projects="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.projects}}>
+  
+          <label>Tag name</label>
+  
+          <input name="tagname" ngModel #tagname="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.tagname}}>
+  
+          <label>Comments</label>
+  
+  
+          <input name="comments" ngModel #comments="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.comments}}>
+  
+          <label>Start date</label>
+  
+          <input name="startdt" ngModel #startdt="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.startdt}}>
+  
+          <label>Due Date</label>
+  
+  
+          <input name="duedt" ngModel #duedt="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.duedt}}>
+  
+          <label>Last Modified Date</label>
+  
+  
+          <input name="lastmoddt" ngModel #lastmoddt="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.lastmoddt}}>
+  
+          <label>Priority</label>
+  
+  
+          <input name="priority" ngModel #priority="ngModel" type="text" class="form-control" value=""
+            placeholder={{updttask.priority}}>
+          
+            
+            <label>User ID</label>
+  
+  
+            <input name="uid" ngModel #uid="ngModel" type="text" class="form-control" value=""
+              placeholder={{updttask.uid}}>
+      
+          <label> Default file input example</label>
+  
+  
+          <input name="files" ngModel #files="ngModel" type="file" class="form-control mb-3" value="" placeholder="files">
+  
+          <input type="submit" value="Submit" button class="btn btn-primary">
+  
+        </form>
+  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1" style="margin-top: -1950px; margin-left: 1000px; width: 130px;">
+        <div class="dropdown" style="width: 150px;">
+          <button class="btn btn-light dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Tasks
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">Incomplete Tasks</a></li>
+            <li><a class="dropdown-item">Completed Tasks</a></li>
+            <li><a class="dropdown-item" (click)="gettsk()">All Tasks</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1" style="margin-top: -1950px; margin-left: 1075px; ">
+        <div class="dropdown" style="width: 150px;">
+          <button class="btn btn-light dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Filters
+          </button>
+          <ul class="dropdown-menu">
+            <h6>Quick Filters</h6>
+            <li><a class="dropdown-item">Just My Tasks</a></li>
+            <li><a class="dropdown-item">Due Today</a></li>
+            <li><a class="dropdown-item">Due This Week</a></li>
+            <li><a class="dropdown-item">Due Next Week</a></li>
+            <h6>Custom Filters</h6>
+            <div class="container mt-3">
+              <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control mb-3" placeholder="Search">
+
+              </div>
+              <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control mb-3" placeholder="Project">
+
+              </div>
+              <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control mb-3" placeholder="Contact">
+
+              </div>
+              <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control mb-3" placeholder="Task Priority">
+
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width: 70px;">Update</button>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="margin-top: -1950px; margin-left: 1154px;">
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Tasks
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">By Start Date</a></li>
+            <li><a class="dropdown-item">By Due Date</a></li>
+            <li><a class="dropdown-item">By Last Modified at</a></li>
+            <li><a class="dropdown-item">By Created at</a></li>
+            <li><a class="dropdown-item">Alphebetically</a></li>
+            <li><a class="dropdown-item">By Tags</a></li>
+            <li><a class="dropdown-item">By Tags</a></li>
+            <li><a class="dropdown-item">By Priority</a></li>
+            <li><a class="dropdown-item">By Project</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="margin-top: -1950px; margin-left: 1230px;">
+        <button class="btn btn-light btn-sm" type="button">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

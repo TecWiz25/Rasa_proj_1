@@ -1,0 +1,115 @@
+<div><app-sidebartsk> </app-sidebartsk></div>
+<!-- <div class="row">
+  <div class="col-md-5 mx-auto">
+    <div class="small fw-light">search input with icon</div>
+    <div class="input-group" style="margin-top: -1900;">
+      <input class="form-control border-end-0 border rounded-pill" type="search" value="search"
+        id="example-search-input">
+      <span class="input-group-append">
+        <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+<a class="btn btn-primary mb-3" style="margin-left: 200px; margin-top: -1910px; overflow-y: hidden;" href="addtask"
+  role="button">Add task</a>
+<a class="btn btn-primary mb-3" style="margin-left: 230px; margin-top: -1900px; overflow-y: hidden;" href="addtask"
+  role="button">Assign</a>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card" style="margin-left: 200px; width: 300px; margin-top: -1800px;">
+      <div class="container" *ngIf="renderflag">
+        <table class="table-striped">
+          <th>Task Name</th>
+          <div *ngIf="showuid">User ID</div>
+          <tbody>
+            <tr *ngFor="let index of task; index as i">
+              <a class="actions" (click)="taskdetails(task[i])">
+                <td>{{task[i].taskname}}</td>
+              </a>
+              <td *ngIf="showuid">{{task[i].uid}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+   
+
+    <div class="card container" style="margin-left: 200px; width: 300px; margin-top: -1800px;" *ngIf="showTaskForm">
+      <form #task="ngForm" (ngSubmit)="edittask(task)">
+        <label>Task Name</label>
+
+        <input name="taskname" ngModel #taskname="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.taskname}}>
+
+
+
+        <label>logged hours</label>
+
+        <input name="loggedhrs" ngModel #loggedhrs="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.loggedhrs}}>
+
+
+        <label>Description</label>
+
+
+        <input name="descrip" ngModel #descrip="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.description}}>
+
+        <label>Project</label>
+
+        <input name="projects" ngModel #projects="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.projects}}>
+
+        <label>Tag name</label>
+
+        <input name="tagname" ngModel #tagname="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.tagname}}>
+
+        <label>Comments</label>
+
+
+        <input name="comments" ngModel #comments="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.comments}}>
+
+        <label>Start date</label>
+
+        <input name="startdt" ngModel #startdt="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.startdt}}>
+
+        <label>Due Date</label>
+
+
+        <input name="duedt" ngModel #duedt="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.duedt}}>
+
+        <label>Last Modified Date</label>
+
+
+        <input name="lastmoddt" ngModel #lastmoddt="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.lastmoddt}}>
+
+        <label>Priority</label>
+
+
+        <input name="priority" ngModel #priority="ngModel" type="text" class="form-control" value=""
+          placeholder={{updttask.priority}}>
+
+        <label> Default file input example</label>
+
+
+        <input name="files" ngModel #files="ngModel" type="file" class="form-control mb-3" value="" placeholder="files">
+
+        <input type="submit" value="Submit" button class="btn btn-primary">
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div> -->

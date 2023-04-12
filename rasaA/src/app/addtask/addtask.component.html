@@ -1,0 +1,110 @@
+<div class="" style="background-color: antiquewhite; margin-top: -15px;">
+<div class="mt-3">
+    <div class="card container" style="width: 500px;  margin-bottom: -20px;">
+        <form #task="ngForm" (ngSubmit)="onClickSubmit(task)">
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Task Name</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="taskname" ngModel #taskname="ngModel" type="text" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>logged hours</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="loggedhrs" ngModel #loggedhrs="ngModel" type="text" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Description</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="descrip" ngModel #descrip="ngModel" type="text" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Project</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="projects" ngModel #projects="ngModel" type="text" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Tag name</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="tagname" ngModel #tagname="ngModel" type="text" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Comments</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="comments" ngModel #comments="ngModel" type="text" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Start date</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="startdt" ngModel #startdt="ngModel" type="date" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Due Date</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="duedt" ngModel #duedt="ngModel" type="date" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Last Modified Date</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="lastmoddt" ngModel #lastmoddt="ngModel" type="date" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Priority</label>
+                </div>
+                <div class="col-md-6">
+                    <input name="priority" ngModel #priority="ngModel" type="text" class="form-control mb-3" value="">
+                </div>
+            </div>
+            <br>
+            <div >
+                <label> Default file input example</label>
+                <input name="files" ngModel #files="ngModel" type="file" class="form-control" value=""
+                    placeholder="files">
+            </div>
+            <div class="row">
+                <br>
+                <div class="col-md-6 ">
+                    <br>
+                    <a href="dashboard"></a> <input type="submit" value="Submit" button class="btn btn-primary">
+                </div>
+
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+</div> 
+</div>

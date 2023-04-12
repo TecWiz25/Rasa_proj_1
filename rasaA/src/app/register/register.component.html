@@ -1,0 +1,59 @@
+<form #register="ngForm" (ngSubmit)="onClickSubmit(register)">
+
+  <body>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-5">
+        <div class="login-form">
+
+          <h1 class="text-light d-flex justify-content-center"><b>Register</b></h1>
+          <div class="form-group ">
+            <label for="name">Name</label>
+            <input name="uname" ngModel #uname="ngModel" type="text" class="form-control" value=""
+              placeholder="Username" required>
+
+          </div>
+          <div class="form-group">
+            <label for="dob">DOB</label>
+            <input name="dob" ngModel #dob="ngModel" type="date" class="form-control" value="" placeholder="DOB" required>
+          </div>
+          <div class="form-group">
+            <label for="Gender">Gender</label>
+            <input name="gender" ngModel #gender="ngModel" type="text" class="form-control" value=""
+              placeholder="Gender" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input name="email" ngModel #email="ngModel" type="email" class="form-control" value="" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label for="upassword">upassword</label>
+            <div class="input-group">
+            <input name="upassword" ngModel #upassword="ngModel" type="{{showPassword ? 'text' : 'password'}}"  class="form-control" value=""
+              placeholder="password" required>
+              <div class="input-group-append">
+                <button class="btn btn-light" type="button" (click)="showPassword = !showPassword">
+                <span class="input-text" id="showPassword"><i class="bi bi-eye"></i></span>
+                </button>
+              </div>
+            </div> 
+          </div>
+
+          <div class="form-group">
+            <label for="mobileno">Mobile no</label>
+            <input name="mobileno" ngModel #mobileno="ngModel" type="number" class="form-control" value=""
+              placeholder="mobileno" required>
+          </div>
+          <div class="form-group">
+            <label for="designaiton">Designation</label>
+            <input name="designation" ngModel #designation="ngModel" type="text" class="form-control mb-3" value=""
+              placeholder="Designation" required>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-dark ">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</form>

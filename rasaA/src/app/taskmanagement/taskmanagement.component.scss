@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+
+  
+}
+
+.table {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form {
+  flex: 0 0 200px;
+}
+
+.card {
+  margin-left: 10;
+  margin-right: 500;
+}

@@ -1,0 +1,17 @@
+<div class="card">
+    <h5 class="card-header">Files Attached:</h5>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Files</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let index of files; index as i">
+            <td>{{files[i].files}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

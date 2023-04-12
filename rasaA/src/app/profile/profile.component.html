@@ -1,0 +1,58 @@
+<form>
+  <div class="row">
+    <section class="view intro-2">
+      <div class="full-bg-img mask rgba-gradient d-flex justify-content-start">
+        <div class="container">
+          <div class="d-flex justify-content-center content-height">
+            <div class="row d-flex justify-content-center pt-5 mt-3 w-100">
+              <div class="col-md-6 text-md-left mb-5">
+                <div class="wow fadeInRight" data-wow-delay="0.3s">
+                  <div>
+                    <div class="text-center">
+                      <h3 class="white-text">My Profile</h3>
+                    </div>
+                    <div card class="wow fadeInRight" data-wow-delay="0.3s">
+                      <div class="md-form d-flex justify-content-center">
+                        <div class="col-md-6 mb-0">
+                          <label for="name" class="form-label d-flex justify-content-start"><b>Username</b></label>
+                          <input type="text" value="{{this.user.uname}}" class="form-control" id="name" aria-describedby="name">
+                        </div>
+                      </div>
+                      <div class="md-form d-flex justify-content-center ">
+                        <div class="col-md-6 mb-0">
+                          <label for="dob" class="form-label d-flex justify-content-start "><b>Date of Birth</b></label>
+                          <input type="text" value="{{this.user.dob}}" class="form-control" id="dob" aria-describedby="dob">
+                        </div>
+                      </div>
+                      <div class="md-form d-flex justify-content-center ">
+                        <div class="col-md-6 mb-0">
+                          <label for="mobile no" class="form-label d-flex justify-content-start"><b>Mobile Number</b></label>
+                          <input type="text" value="{{this.user.mobileno}}" class="form-control" id="mobile no" aria-describedby="mobile no">
+                        </div>
+                      </div>
+                      <div class="md-form d-flex justify-content-center ">
+                        <div class="col-md-6 mb-0">
+                          <label for="email" class="form-label d-flex justify-content-start"><b>Email</b></label>
+                          <input type="text" value="{{this.user.email}}" class="form-control" id="email" aria-describedby="email">
+                        </div>
+                      </div>
+                      <div class="md-form d-flex justify-content-center">
+                        <div class="col-md-6 mb-0">
+                          <label for="designation" class="form-label d-flex justify-content-start"><b>Designation</b></label>
+                          <input type="text"  value="{{this.user.designation}}" class="form-control" id="designation" aria-describedby="designation">
+                          <div class="text-right">
+                          <input class="btn btn-primary" type="submit" value="Submit">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</form>

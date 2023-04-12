@@ -1,0 +1,37 @@
+<form #login= "ngForm" (ngSubmit)="onClickSubmit(login)">
+<div class="container-fluid">
+		<div class="row main-content  text-center">
+			<div class="col-md-4 text-center company__info">
+				
+				<img src="assets/login01.jpg"  class="img-rounded">
+			</div>
+			<div class="col-md-8 col-xs-12 col-sm-12 ">
+				<div class="container-fluid">
+					<div class="row">
+						<h2>Log In</h2>
+					</div>
+					<div class="row">
+						
+							<div class="row">
+								<input name="uname" ngModel #uname ="ngModel" type="text"  class="form__input" value="" placeholder="uname">
+							</div>
+							<div class="row">
+								
+								<input name="upassword" #upassword ngModel  type="password"  class="form__input" placeholder="Password">
+							</div>
+							
+							<div class="row">
+                                <div class="col-md-6">
+                                    <a href="dashboard"></a> <input type="submit" value="Submit" class="btn">
+								</div>
+
+							</div>
+					
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</form>

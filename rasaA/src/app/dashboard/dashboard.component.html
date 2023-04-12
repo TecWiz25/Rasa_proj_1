@@ -1,0 +1,118 @@
+<form #formData="ngForm" enctype="multipart/form-data">
+  <div class="py-5" style="background-color:#a1afd4;  height: 1000px">
+    <div class="container mt-0">
+      <div class="row ">
+        <div class="col-lg-6">
+          <div class="justify-content-center">
+            <div class="card mb-5" style="width: 18rem;">
+              <div class="card-body mb-3 ">
+                <div class="row">
+                  <div class="col-md-9">
+                    <h5 class="card-title"><b>Aswini devi S</b></h5>
+                  </div>
+                  <div class="col-md-3"><i class="bi bi-person-circle fs-4 "></i></div>
+                  <p class="card-text mb-3">Junior Software Engineer</p>
+                </div>
+                <div *ngIf="isCameraExist; else noCameraExist">
+                  <div style="text-align:center">
+                    <div class="frame" *ngIf="tstatus.time == '0'">
+                      <button class="custom-btn btn-6 text-dark mb-3" (click)="takeSnapshot()"
+                        (click)="addLocation()">Time In</button>
+                    </div>
+                    <div class="frame" *ngIf="tstatus.time == '1'">
+                      <button class="custom-btn btn-6 text-dark mb-3" (click)="timeout()">Time Out</button>
+                    </div>
+                    <h4 *ngIf="tstatus.time == '2'">Attendendance done for today</h4>
+                    <!-- <div class="frame">
+                      <button class="custom-btn btn-6 text-dark" >Take Picture</button>
+                      <img * ngIf="imageData" [src]="imageData" />
+                    </div> -->
+                    <webcam [height]="300" [width]="250" [trigger]="triggerObservable"
+                      (imageCapture)="handleImage($event)" *ngIf="showWebcam" [switchCamera]="nextWebcamObservable">
+                    </webcam>
+                  </div>
+
+                  <div *ngIf="errors.length > 0">
+                    <h4>Error Messages:</h4>
+                    <ul *ngFor="let error of errors">
+                      <li>{{ error | json }}</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <ng-template #noCameraExist>
+                  Camera device not available
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 ">
+          <div class="row d-flex justify-content-center " *ngIf="tstatus.time == '1'">
+            <div class="col-md-1 ">
+              <div class="">
+                <div class="spinner-grow text-success" role="status"></div>
+                <span class="visually-hidden">Loading...</span>
+                <div class="col"></div>
+              </div>
+
+            </div>
+            <div class="col-md-1">
+              <b>
+                <p *ngIf="tstatus.time == '1'">Present</p>
+              </b>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center " *ngIf="tstatus.time == '2'">
+            <div class="col-md-1 ">
+              <div class="">
+                <div class="spinner-grow text-success" role="status"></div>
+                <span class="visually-hidden">Loading...</span>
+                <div class="col"></div>
+              </div>
+
+            </div>
+            <div class="col-md-1">
+              <b>
+                <p *ngIf="tstatus.time == '2'">Present</p>
+              </b>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center" *ngIf="tstatus.time == '0'">
+            <div class="col-md-1">
+              <div class="">
+                <div class="spinner-grow text-danger" role="status"></div>
+                <span class="visually-hidden">Loading...</span>
+                <div class="col"></div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <b>
+                <p *ngIf="tstatus.time == '0'">Absent</p>
+              </b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-camera (getPicture)="handleImage($event)"></app-camera>
+      <div class="webcam-image" *ngIf="webcamImage">
+        <img [src]="webcamImage.imageAsDataUrl" />
+      </div>
+      <br />
+      <div [ngSwitch]="view">
+        <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events"
+          [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+          (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-month-view>
+        <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events"
+          [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-week-view>
+        <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events"
+          [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-day-view>
+      </div>
+    </div>
+  </div>
+</form>
